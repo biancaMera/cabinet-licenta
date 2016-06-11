@@ -1,0 +1,33 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="cabinet">
+<head>
+  <!-- META -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+  <title>Node/Angular Todo App</title>
+
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+  <link rel="stylesheet" type="text/css" href="assets/css/index.css">
+
+  <!-- Load dependencies from node modules -->
+  <script src="node_modules/angular/angular.js"></script>
+  <script src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+
+  <!-- Load our app files -->
+  <script src="app.module.js"></script>
+  <script src="app.config.js"></script>
+
+  <script src="services/util.js"></script>
+  <script src="services/login.js"></script>
+  <script src="controllers/login.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div ui-view></div>
+  </div>
+</body>
+</html>

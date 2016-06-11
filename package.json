@@ -1,0 +1,35 @@
+{
+  "name": "cabinet-licenta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "angular": "^1.5.6",
+    "body-parser": "^1.15.1",
+    "connect-mongo": "^1.2.0",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "lodash": "^4.13.1",
+    "express-validator": "^2.20.5",
+    "method-override": "^2.3.6",
+    "mongoose": "^4.4.20",
+    "morgan": "^1.7.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biancaMera/cabinet-licenta.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/biancaMera/cabinet-licenta/issues"
+  },
+  "homepage": "https://github.com/biancaMera/cabinet-licenta#readme"
+}
