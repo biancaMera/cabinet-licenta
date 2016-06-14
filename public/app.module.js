@@ -9,7 +9,8 @@
   angular
   .module('cabinet',
       [
-        'ui.router'
+        'ui.router',
+        'jkAngularRatingStars'
       ]);
 
 

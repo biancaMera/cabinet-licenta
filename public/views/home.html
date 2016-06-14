@@ -1,0 +1,104 @@
+<meniu-directive></meniu-directive>
+<div class="header-container bottom-order">
+	<div class="row">
+		<h1 class="col-md-12 text-center">
+			Meriti tot ce e mai bun
+		</h1>
+	</div>
+	<div class="row">
+		<button class="col-md-offset-5 col-md-2 margin-bottom-30 btn btn-default text-center">Inregistrare</button>
+	</div>
+</div>
+<div class="despre-container bottom-order">
+	<div class="row">
+		<h1 class="text-center margin-bottom-50">Despre</h1>
+		<div class="text-center margin-bottom-50">
+			<p>Cu ajutorul nostru vei primi cele mai bune recomandari ale medicilor de care ai nevoie</p>
+			<p>Poti cere sfatul unui medic, rapid, cu o simpla intrebare!</p>
+		</div>
+	</div>
+</div>
+
+<div class="servicii-utile-container bottom-order">
+	<div class="row">
+		<h1 class="text-center margin-bottom-70">Servicii utile</h1>
+		<div class="col-md-offset-4 col-md-2 margin-bottom-70">
+			<div class="col-md-12 rounded-container" ng-click="gotoAnchor('cauta-medic')">
+				<span class="glyphicon glyphicon-search custom-glyphicon" aria-hidden="true"></span>
+			</div>
+			<h3 class="col-md-12 text-center">Cauta medic</h3>
+			<div class="col-md-12 text-center">
+				Descrire mai lungaflhas hskjfhs hh fskj hfssdfhjlk jh
+			</div>
+		</div>
+		<div class="col-md-2">
+			<div class="col-md-12 rounded-container" ng-click="gotoAnchor('cere-sfat')">
+				<span class="glyphicon glyphicon-thumbs-up custom-glyphicon" aria-hidden="true"></span>
+			</div>
+			<h3 class="col-md-12 text-center">Cere un sfat</h3>
+			<div class="col-md-12 text-center">
+				Descrire mai lungaflhas hskjfhs hh fskj hfssdfhjlk jh
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="cauta-medic" class="cauta-container bottom-order">
+	<div class="row">
+		<h1 class="text-center">Cauta medic</h1>
+		<form>
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label class="col-md-5">Nume</label>
+					<input class="col-md-7" type="text">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group  col-md-4">
+					<label class="col-md-5">Specializare</label>
+				  <select class="col-md-7"ng-model="myColor" ng-options="color.name for color in colors">
+			      <option value="">Alege specializarea</option>
+			    </select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label class="col-md-5">Judet</label>
+					<input class="col-md-7" type="text">
+				</div>	
+			</div>
+			<div class="row">
+				<div class="form-group col-md-4">
+					<label class="col-md-5">Localitati</label>
+					<input class="col-md-7" type="text">
+				</div>	
+			</div>
+			<div class="row">
+				<div class="form-group col-md-4">
+					<button ng-click="findMedic()" class="col-md-5 btn btn-default pull-right">Cauta</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div id="cere-sfat" class="sfat-container bottom-order">
+	<div class="row">
+		<h1 class="text-center">Cere un sfat</h1>
+			<form>
+			<div class="row">
+				<div class="form-group col-md-6">
+					<label class="col-md-12">Adreseaza o intrebare</label>
+					<textarea cols="40" rows="5">
+						
+					</textarea>
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-md-3">
+					<button class="col-md-5 btn btn-default">Intreaba</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

@@ -27,9 +27,14 @@
      })
     .state('home', {
       url: '/home',
-      templateUrl: 'templates/home.html',
-      controller: 'HomeController as vm'
+      templateUrl: 'views/home.html',
+      controller: 'HomeController'
     })
+    .state('medici', {
+      url: '/medici',
+      templateUrl: 'views/medic.html',
+      controller: 'MedicController'
+    })    
     $urlRouterProvider.otherwise("/login");
   }
 

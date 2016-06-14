@@ -1,0 +1,24 @@
+<!-- <div ng-controller="navBarController"> -->
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container-fluid">
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="" ng-click="navigateTo('home')">Best Doctor </a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a ng-href="">{{user.name}}</a></li>
+          <li><a ng-href="#">Despre</a></li>
+          <li class="dropdown">
+            <a ng-href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Servicii utile <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="" ng-click="gotoAnchor('cauta-medic')">Cauta medic</a></li>
+              <li><a href="" ng-click="gotoAnchor('cere-sfat')">Cere un sfat</a></li>
+            </ul>
+          </li>
+          <li><a ng-href="#">Inregistrare</a></li>
+
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>

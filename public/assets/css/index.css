@@ -1,9 +1,60 @@
-html {
-  overflow-y: scroll;
-}
 body {
-  padding-top: 50px;
+  padding: 0;
+  margin: 0;
 }
-#todo-list {
-  margin-bottom: 30px;
+
+.margin-top-30 {
+	margin-top: 30px;
+}
+
+.margin-top-20 {
+	margin-top: 20px;
+}
+
+.margin-bottom-30 {
+	margin-bottom: 30px;
+}
+
+.margin-bottom-20 {
+	margin-bottom: 20px;
+}
+
+.margin-bottom-50 {
+	margin-bottom: 50px;
+}
+
+.margin-bottom-70 {
+	margin-bottom: 70px;
+}
+
+.bottom-order {
+	border-bottom: 1px solid grey;
+	padding-bottom: 10px;
+}
+
+.rounded-container {
+	height: 150px;
+	border: 1px solid #dc7269;
+	border-radius: 50%;
+	color: #dc7269;
+	cursor: pointer;
+}
+.rounded-container:hover {
+	background: #dc7269;
+	color: white;
+}
+
+.custom-glyphicon {
+	font-size: 30px;
+  position: relative;
+  left: 41%;
+  top: 33%;
+}
+
+.cursor-pointer {
+	cursor: pointer;
+}
+
+.header-container h1 {
+	margin-bottom: 40px;
 }
