@@ -34,7 +34,12 @@
       url: '/medici',
       templateUrl: 'views/medic.html',
       controller: 'MedicController'
-    })    
+    }) 
+    .state('admin', {
+      url: '/admin',
+      templateUrl: 'views/adaugare-admin.html',
+      controller: 'AdminController'
+    })     
     $urlRouterProvider.otherwise("/login");
   }
 

@@ -16,6 +16,60 @@
 			<p>Cu ajutorul nostru vei primi cele mai bune recomandari ale medicilor de care ai nevoie</p>
 			<p>Poti cere sfatul unui medic, rapid, cu o simpla intrebare!</p>
 		</div>
+		<div>
+			<div class="col-md-3">
+				<div class="row">
+					<div class="col-md-offset-3 col-md-5 rounded-container rounded-container-small">
+						<span class="glyphicon glyphicon-edit custom-glyphicon" aria-hidden="true"></span>
+					</div>
+				</div>
+				<h3 class="row text-center">Exprimă-ți părerea!</h3>
+				<div class="row text-center">
+					<div class="col-md-8 col-md-offset-2">
+						Ai posibilitatea să evaluezi experiența avută cu un medic
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="row">
+					<div class="col-md-5 col-md-offset-3 rounded-container rounded-container-small">
+						<span class="glyphicon glyphicon-thumbs-up custom-glyphicon" aria-hidden="true"></span>
+					</div>
+				</div>
+				<h3 class="row text-center">Cere un sfat!</h3>
+				<div class="row text-center">
+					<div class="col-md-8 col-md-offset-2">
+						Dacă ai o nelămurire, adresează o întrebare imediat și vei putea primi un răspuns care să-ți fie de folos
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="row">
+					<div class="col-md-5 col-md-offset-3 rounded-container rounded-container-small">
+						<span class="glyphicon glyphicon-flash custom-glyphicon" aria-hidden="true"></span>
+					</div>
+				</div>
+				<h3 class="row text-center">Rapid și eficient! </h3>
+				<div class="row text-center">
+					<div class="col-md-8 col-md-offset-2">
+						Caută medicul de care ai nevoie și vei primi cea mai bună recomandare în cel mai scurt timp
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="row">
+					<div class="col-md-offset-3 col-md-5 rounded-container rounded-container-small">
+						<span class="glyphicon glyphicon-bullhorn custom-glyphicon" aria-hidden="true"></span>
+					</div>
+				</div>
+				<h3 class="row text-center">Ajută sistemul medical! </h3>
+				<div class="row text-center">
+					<div class="col-md-8 col-md-offset-2">
+						Poți ajuta sistemul medical și medicii care merită cu adevărat să fie promovați !
+					</div>
+				</div>
+			</div>			
+		</div>
 	</div>
 </div>
 
@@ -64,13 +118,17 @@
 			<div class="row">
 				<div class="form-group col-md-4">
 					<label class="col-md-5">Judet</label>
-					<input class="col-md-7" type="text">
+									  <select class="col-md-7"ng-model="myColor" ng-options="color.name for color in colors">
+			      <option value="">Alege judetul</option>
+			    </select>
 				</div>	
 			</div>
 			<div class="row">
 				<div class="form-group col-md-4">
 					<label class="col-md-5">Localitati</label>
-					<input class="col-md-7" type="text">
+									  <select class="col-md-7"ng-model="myColor" ng-options="color.name for color in colors">
+			      <option value="">Alege localitatea</option>
+			    </select>
 				</div>	
 			</div>
 			<div class="row">
@@ -88,7 +146,7 @@
 			<form>
 			<div class="row">
 				<div class="form-group col-md-6">
-					<label class="col-md-12">Adreseaza o intrebare</label>
+					<label class="col-md-12 no-padding">Adreseaza o intrebare</label>
 					<textarea cols="40" rows="5">
 						
 					</textarea>

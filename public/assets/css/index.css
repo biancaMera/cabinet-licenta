@@ -1,6 +1,15 @@
 body {
   padding: 0;
   margin: 0;
+  font-family: 'Open Sans';
+}
+
+h1, h2, h3 {
+	font-family: 'Open Sans';
+}
+
+.no-padding {
+	padding: 0
 }
 
 .margin-top-30 {
@@ -39,6 +48,10 @@ body {
 	color: #dc7269;
 	cursor: pointer;
 }
+
+.rounded-container {
+	height: 100px;
+}
 .rounded-container:hover {
 	background: #dc7269;
 	color: white;
@@ -55,6 +68,68 @@ body {
 	cursor: pointer;
 }
 
+.header-container {
+	background-image: url('../images/header-img.png');
+	height: 400px;
+	width: 100%;
+	background-size: cover;
+	color: white;
+}
 .header-container h1 {
+	margin-top: 190px;
 	margin-bottom: 40px;
+}
+
+.despre-container {
+	background-image: url('../images/backgroundazul.png');
+	height: 700px;
+	width: 100%;
+	background-size: cover;
+	color: #999999;
+}
+
+.despre-container h1 {
+	margin-top: 120px;
+}
+.despre-container p {
+	font-size: 25px;
+}
+
+.servicii-utile-container div {
+	color: #999999
+}
+
+.servicii-utile-container h3 {
+	color: #dc7269;
+}
+
+#cauta-medic {
+	background-image: url('../images/backgroundazul.png');
+	height: 400px;
+	width: 100%;
+	background-size: cover;
+}
+
+#cauta-medic form {
+	margin-left: 20px;
+}
+
+#cauta-medic h1 {
+	color: #999999;
+}
+
+#cere-sfat {
+	background-image: url('../images/backgroundazul.png');
+	height: 400px;
+	width: 100%;
+	background-size: cover;
+}
+
+#cere-sfat h1 {
+	color: #999999;
+	margin-bottom: 50px;
+}
+
+#cere-sfat form {
+	margin-left: 35px;
 }
