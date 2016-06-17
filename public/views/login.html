@@ -4,14 +4,14 @@
 	<div class="col-md-3">
 		<form>
 			<div class="form-group">
-				<label>Email address</label>
-				<input type="email" ng-model="vm.user.email" class="form-control" placeholder="Email">
+				<label>Email</label>
+				<input type="email" ng-model="user.email" class="form-control" placeholder="Email">
 			</div>
 			<div class="form-group">
-				<label>Password</label>
-				<input type="password" ng-model="vm.user.password" class="form-control" placeholder="Password">
+				<label>Parola</label>
+				<input type="password" ng-model="user.password" class="form-control" placeholder="Parola">
 			</div>
-			<button type="submit" class="btn btn-default" ng-click="vm.login()">Conecteaza-te</button>
+			<button type="submit" class="btn btn-default" ng-click="login()">Conecteaza-te</button>
 		</form>
 	</div>
 </div>
@@ -22,21 +22,17 @@
 		<form>
       <div class="form-group">
         <label>Nume</label>
-        <input type="email" ng-model="vm.user.firstName" class="form-control"placeholder="Email">
-      </div>
-      <div class="form-group">
-        <label>Prenume</label>
-        <input type="email" ng-model="vm.user.lastName" class="form-control"placeholder="Email">
+        <input type="text" ng-model="registerUser.name" class="form-control"placeholder="Email">
       </div>
 			<div class="form-group">
-				<label for="exampleInputEmail1">Email address</label>
-				<input type="email" ng-model="vm.user.email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+				<label>Email</label>
+				<input type="email" ng-model="registerUser.email" class="form-control" placeholder="Email">
 			</div>
 			<div class="form-group">
-				<label for="exampleInputPassword1">Password</label>
-				<input type="password" ng-model="vm.user.password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+				<label>Parola</label>
+				<input type="password" ng-model="registerUser.password" class="form-control" placeholder="Parola">
 			</div>
-			<button type="submit" class="btn btn-default" ng-click="vm.register()">Inregistrare</button>
+			<button type="submit" class="btn btn-default" ng-click="register()">Inregistrare</button>
 		</form>
 	</div>
 </div>

@@ -13,9 +13,11 @@
             <ul class="dropdown-menu">
               <li><a href="" ng-click="gotoAnchor('cauta-medic')">Cauta medic</a></li>
               <li><a href="" ng-click="gotoAnchor('cere-sfat')">Cere un sfat</a></li>
+              <li><a href="" ng-click="navigateTo('admin')">Admin</a></li>
             </ul>
           </li>
-          <li><a ng-href="#">Inregistrare</a></li>
+          <li ng-show="!user"><a ng-href="#" ng-click="navigateTo('login')">Inregistrare</a></li>
+          <li ng-show="user"><a ng-href="#" ng-click="logOut()">Logout</a></li>
 
         </ul>
       </div><!-- /.navbar-collapse -->

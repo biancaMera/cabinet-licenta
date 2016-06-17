@@ -23,7 +23,7 @@
      .state('login', {
        url: '/login',
        templateUrl: 'views/login.html',
-       controller: 'LoginController as vm'
+       controller: 'LoginController'
      })
     .state('home', {
       url: '/home',

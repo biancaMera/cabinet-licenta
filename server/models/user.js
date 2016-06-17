@@ -14,6 +14,11 @@ let UserSchema = new Schema({
   name: {
     type: String
   },
+  role: {
+    type: String,
+    required: true,
+    default: 'user'
+  },
   password: {
     type: String,
     required: true,

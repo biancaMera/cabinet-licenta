@@ -12,6 +12,10 @@ h1, h2, h3 {
 	padding: 0
 }
 
+.title-name {
+	font-size: 20px;
+}
+
 .margin-top-30 {
 	margin-top: 30px;
 }
