@@ -1,0 +1,34 @@
+<meniu-directive></meniu-directive>
+
+<div class="row">
+	<div class="col-md-4">
+		<form>
+			<div class="form-group">
+				<label>Nume</label>
+				<input type="text" class="form-control" ng-model="medic.name">
+			</div>
+			<div class="form-group">
+				<label>Specializare</label>
+			  <select  ng-model="medic.specialization" class="form-control" ng-options="specialization.name for specialization in specializations">
+		      <option value="">Alege specializarea</option>
+		    </select>
+			</div>
+			<div class="form-group">
+				<label>Judet</label>
+			  <select  ng-model="medic.judet" class="form-control" ng-options="judet.name for judet in judete">
+		      <option value="">Alege Judet</option>
+		    </select>
+			</div>
+			<div class="form-group">
+				<label>Localitate</label>
+			  <select  ng-model="medic.localition" class="form-control" ng-options="localition.name for localition in locations">
+		      <option value="">Alege Localitate</option>
+		    </select>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-default" ng-click="addMedic()">Adauga medic</button>
+			  
+			</div>
+		</form>
+	</div>
+</div>

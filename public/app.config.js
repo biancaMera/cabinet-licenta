@@ -69,6 +69,11 @@
       url: '/adminLocation/:id',
       templateUrl: 'views/adminLocation.html',
       controller: 'AdminLocation'
+    })
+    .state('addMedic', {
+      url: '/addMedic',
+      templateUrl: 'views/addMedic.html',
+      controller: 'addMedicController'
     }) 
     $urlRouterProvider.otherwise("/login");
   }
