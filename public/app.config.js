@@ -39,7 +39,37 @@
       url: '/admin',
       templateUrl: 'views/adaugare-admin.html',
       controller: 'AdminController'
-    })     
+    })
+    .state('adminSpecializari', {
+      url: '/adminSpecializari',
+      templateUrl: 'views/adminSpecializari.html',
+      controller: 'AdminSpecializari'
+    })
+    .state('adminSpecializariEdit', {
+      url: '/adminSpecializari/:id',
+      templateUrl: 'views/adminSpecializari.html',
+      controller: 'AdminSpecializari'
+    })  
+    .state('adminJudete', {
+      url: '/adminJudete',
+      templateUrl: 'views/adminJudete.html',
+      controller: 'AdminJudete'
+    })
+    .state('adminJudeteEdit', {
+      url: '/adminJudete/:id',
+      templateUrl: 'views/adminJudete.html',
+      controller: 'AdminJudete'
+    })  
+    .state('adminLocation', {
+      url: '/adminLocation',
+      templateUrl: 'views/adminLocation.html',
+      controller: 'AdminLocation'
+    })
+    .state('adminLocationEdit', {
+      url: '/adminLocation/:id',
+      templateUrl: 'views/adminLocation.html',
+      controller: 'AdminLocation'
+    }) 
     $urlRouterProvider.otherwise("/login");
   }
 

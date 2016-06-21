@@ -1,0 +1,15 @@
+<meniu-directive></meniu-directive>
+<div class="row">
+	<div class="col-md-4">
+		<form>
+			<div class="form-group">
+				<label>Nume</label>
+				<input type="text" ng-model="specialization.name" class="form-control">
+			</div>
+			<div class="form-group">
+				<button ng-show="!isEditPage" class="btn btn-default" ng-click="addSpecialization()"> Adauga</button>
+				<button ng-show="isEditPage" class="btn btn-default" ng-click="editSpecialization(specialization._id)"> Editeaza</button>
+			</div>
+		</form>	
+	</div>
+</div>

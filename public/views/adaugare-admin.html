@@ -1,5 +1,5 @@
 <meniu-directive></meniu-directive>
-<div class="row">
+<!-- <div class="row">
 	<div class="col-md-4">
 		<h3>Adaugare specializare</h3>
 			<form>
@@ -30,19 +30,46 @@
 				<button type="submit" class="btn btn-default" ng-click="vm.addCategory()">Adauga</button>
 			</form>
 	</div>
+</div> -->
+
+<div class="col-md-4">
+	<h2 class="col-md-12 row">Specializari</h2>
+	<button class="btn btn-default" ng-click="navigateTo('adminSpecializari')">Adauga specializare</button>
+	<div ng-repeat="specialization in specializations" class="row specialization margin-bottom-20">
+		<div class="col-md-6 title-name">{{specialization.name}}</div>
+		<div class="col-md-3">
+			<button ng-click="navigateTo('adminSpecializariEdit', specialization._id)" class="btn btn-default">Modifica</button>
+		</div>
+		<div class="col-md-3">
+			<button class="btn btn-danger" ng-click="removeSpecialization(specialization._id)">Sterge</button>
+		</div>
+	</div>
 </div>
 
-<div class="row">
-	<h2 class="col-md-12">Specializari</h2>
-	<div class="col-md-4">
-		<div ng-repeat="specialization in specializations " class="specialization">
-			<div class="col-md-6 title-name">{{specialization.name}}</div>
-			<div class="col-md-3">
-				<button class="btn btn-default">Modifica</button>
-			</div>
-			<div class="col-md-3">
-				<button class="btn btn-danger" ng-click="removeSpecialization(specialization.id)">Sterge</button>
-			</div>
+<div class="col-md-4">
+	<h2 class="col-md-12 row">Judete</h2>
+	<button class="btn btn-default" ng-click="navigateTo('adminJudete')">Adauga judet</button>
+	<div ng-repeat="judet in judete" class="row specialization margin-bottom-20">
+		<div class="col-md-6 title-name">{{judet.name}}</div>
+		<div class="col-md-3">
+			<button ng-click="navigateTo('adminJudeteEdit', judet._id)" class="btn btn-default">Modifica</button>
+		</div>
+		<div class="col-md-3">
+			<button class="btn btn-danger" ng-click="removeJudet(judet._id)">Sterge</button>
+		</div>
+	</div>
+</div>
+
+<div class="col-md-4">
+	<h2 class="col-md-12 row">Localitati</h2>
+	<button class="btn btn-default" ng-click="navigateTo('adminLocation')">Adauga localitate</button>
+	<div ng-repeat="location in locations" class="row specialization margin-bottom-20">
+		<div class="col-md-6 title-name">{{location.name}}</div>
+		<div class="col-md-3">
+			<button ng-click="navigateTo('adminLocationEdit', location._id)" class="btn btn-default">Modifica</button>
+		</div>
+		<div class="col-md-3">
+			<button class="btn btn-danger" ng-click="removeLocation(location._id)">Sterge</button>
 		</div>
 	</div>
 </div>
