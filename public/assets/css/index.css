@@ -12,6 +12,13 @@ h1, h2, h3 {
 	padding: 0
 }
 
+.single-medic {
+	border-bottom: 2px solid grey;
+  padding-bottom: 20px;
+  padding-top: 20p;
+  margin-bottom: 20px;
+}
+
 .title-name {
 	font-size: 20px;
 }
@@ -74,7 +81,7 @@ h1, h2, h3 {
 
 .header-container {
 	background-image: url('../images/header-img.png');
-	height: 400px;
+	padding-bottom: 50px;
 	width: 100%;
 	background-size: cover;
 	color: white;
@@ -109,7 +116,7 @@ h1, h2, h3 {
 
 #cauta-medic {
 	background-image: url('../images/backgroundazul.png');
-	height: 400px;
+	padding-bottom: 50px;
 	width: 100%;
 	background-size: cover;
 }
@@ -124,7 +131,7 @@ h1, h2, h3 {
 
 #cere-sfat {
 	background-image: url('../images/backgroundazul.png');
-	height: 400px;
+	padding-bottom: 50px;
 	width: 100%;
 	background-size: cover;
 }

@@ -19,11 +19,12 @@ module.exports.jsonMedic = jsonMedic;
 
 
 function addMedic(req, res, next) {
-  let medic = _.pick(req.body, ['name']);
+  let medic = _.pick(req.body, ['firstName', 'lastName', 'specialization', 'judet', 'location', 'rating']);
 
   Medic.create(medic, (err, result) => {
-    if (err && (11000 === err.code || 11001 === err.code)) {
-      return res.status(400).json({ message: 'Name is already in use.' });
+    console.log('err', err);
+    if(err) {
+      return next(err);
     }
     req.resources.medic = result;
     next();
@@ -42,7 +43,7 @@ function deleteMedic(req, res, next) {
 
 function update(req, res, next) {
   let medic = req.resources.medic;
-  let body = _.pick(req.body, ['name']);
+  let body = _.pick(req.body, ['firstName', 'lastName', 'specialization', 'judet', 'location', 'rating']);
   Object.assign(medic, body);
 
   medic.save( (err, result) => {
@@ -55,7 +56,37 @@ function update(req, res, next) {
 }
 
 function getMedici(req, res, next) {
-  Medic.find({}, (err, result) => {
+  var query = {}
+  var firstName = req.query.firstName;
+  var lastName = req.query.lastName;
+  var specialization = req.query.specialization;
+  var location = req.query.location;
+  var judet = req.query.judet;
+
+
+  // if(firstName) {
+  //   query.firstName = firstName
+  // }
+
+  // if(lastName) {
+  //   query.lastName = lastName
+  // }
+  if(specialization) {
+    query.specialization = specialization
+  }
+  if(location) {
+    query.location = location
+  }
+  if(judet) {
+    query.judet = judet
+  }
+
+  Medic
+  .find(query)
+  .populate('specialization')
+  .populate('judet')
+  .populate('location')
+  .exec((err, result) => {
     if (err) {
       return next(err);
     }

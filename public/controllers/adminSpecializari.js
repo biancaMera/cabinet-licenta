@@ -35,6 +35,7 @@
       var url = '/api/specialization/';
       Util.create(url, $scope.specialization)
         .then(function(result) {
+          $scope.specialization = {};
         }, function(error) {
           console('error');
         })

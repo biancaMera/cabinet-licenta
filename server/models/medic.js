@@ -6,9 +6,12 @@ const ObjectId = Schema.ObjectId;
 const _ = require('lodash');
 
 let medicSchema = new Schema({
-  name: {
+  firstName: {
     type: String,
-    unique: true,
+    required: true
+  },
+  lastName: {
+    type: String,
     required: true
   },
   specialization: {

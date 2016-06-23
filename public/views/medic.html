@@ -1,126 +1,141 @@
 <meniu-directive></meniu-directive>
 
-<div class="row">
-	<div class="row">
-		<div class="col-md-8">
-			<label class="col-md-2">
-				Medic:
-			</label>
-			<label class="col-md-3">
-			 	Pop Ioan
-			</label>
+<div class="row single-medic" ng-repeat="medic in medici">
+	<div class="col-md-4">
+		
+		<div class="row">
+			<div class="col-md-12">
+				<label class="col-md-5">
+					Medic:
+				</label>
+				<label class="col-md-7">
+				 	{{medic.firstName}} {{medic.lastName}}
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<label class="col-md-5">
+					Specializare:
+				</label>
+				<label class="col-md-7">
+				 	{{medic.specialization.name}}
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<label class="col-md-5">
+					Judet:
+				</label>
+				<label class="col-md-7">
+				 	{{medic.judet.name}}
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<label class="col-md-5">
+					Localitate:
+				</label>
+				<label class="col-md-7">
+				 	{{medic.location.name}}
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<label class="col-md-5">
+					Rating:
+				</label>
+				<label class="col-md-7">
+					<jk-rating-stars 
+						max-rating="5" 
+						rating="1" 
+						read-only="true"
+					 	on-rating="onRating(rating)" >
+					</jk-rating-stars>
+				</label>
+			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-8">
-			<label class="col-md-2">
-				Specializare:
-			</label>
-			<label class="col-md-3">
-			 	Sportiva
-			</label>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-8">
-			<label class="col-md-2">
-				Judet:
-			</label>
-			<label class="col-md-3">
-			 	Maramures
-			</label>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-8">
-			<label class="col-md-2">
-				Localitate:
-			</label>
-			<label class="col-md-3">
-			 	Sighetu Marmatiei
-			</label>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-8">
-			<label class="col-md-2">
-				Rating:
-			</label>
-			<label class="col-md-5">
-				<jk-rating-stars 
-					max-rating="5" 
-					rating="1" 
-					read-only="true"
-				 	on-rating="onRating(rating)" >
-				</jk-rating-stars>
-			</label>
-		</div>
-	</div>
+	<div  ng-show="user"  class="col-md-8">
+		
 	<!-- Rating field -->
-	<div class="row">
-		<div class="col-md-8">
-			<label class="col-md-2">
-				Comunicare:
-			</label>
-			<label class="col-md-2">
-			 	Nota
-			  <input type="number" min="1" max="5">
-			</label>
+		<div class="col-md-6">
+			<div class="medic-grades">
+				<div class="row">
+					<div class="col-md-12">
+						<label class="col-md-6">
+							Comunicare:
+						</label>
+						<label class="col-md-6">
+						 	Nota
+						  <input type="number" class="form-control" min="1" max="5">
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<label class="col-md-6">
+							Pregatire:
+						</label>
+						<label class="col-md-6">
+						 	Nota
+						  <input type="number" class="form-control" min="1" max="5">
+						</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<label class="col-md-6">
+							Atitudine:
+						</label>
+						<label class="col-md-6">
+						 	Nota
+						  <input type="number" class="form-control" min="1" max="5">
+						</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	<div class="col-md-6">
+		<div class="row">
+			<div class="col-md-12">
+				<label class="col-md-6">
+					Dotare:
+				</label>
+				<label class="col-md-6">
+				 	Nota
+				  <input type="number" class="form-control" min="1" max="5">
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<label class="col-md-6">
+					Disponibilitate:
+				</label>
+				<label class="col-md-6">
+				 	Nota
+				  <input type="number" class="form-control" min="1" max="5">
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<label class="col-md-6">
+					Punctaj final:
+				</label>
+				<label class="col-md-6">
+				 	Nota
+				  <input type="number" class="form-control" min="1" max="5">
+				</label>
+			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-8">
-			<label class="col-md-2">
-				Pregatire:
-			</label>
-			<label class="col-md-2">
-			 	Nota
-			  <input type="number" min="1" max="5">
-			</label>
-		</div>
+
 	</div>
-	<div class="row">
-		<div class="col-md-8">
-			<label class="col-md-2">
-				Atitudine:
-			</label>
-			<label class="col-md-2">
-			 	Nota
-			  <input type="number" min="1" max="5">
-			</label>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-8">
-			<label class="col-md-2">
-				Dotare:
-			</label>
-			<label class="col-md-2">
-			 	Nota
-			  <input type="number" min="1" max="5">
-			</label>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-8">
-			<label class="col-md-2">
-				Disponibilitate:
-			</label>
-			<label class="col-md-2">
-			 	Nota
-			  <input type="number" min="1" max="5">
-			</label>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-8">
-			<label class="col-md-2">
-				Punctaj final:
-			</label>
-			<label class="col-md-2">
-			 	Nota
-			  <input type="number" min="1" max="5">
-			</label>
-		</div>
+
 	</div>
 </div>

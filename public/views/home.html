@@ -106,30 +106,36 @@
 		<form>
 			<div class="row">
 				<div class="form-group col-md-4">
-					<label class="col-md-5">Nume</label>
-					<input class="col-md-7" type="text">
+					<label class="col-md-5 no-padding">Nume</label>
+					<input class="col-md-7 form-control" type="text" ng-model="medic.firstName">
 				</div>
 			</div>
 			<div class="row">
+				<div class="form-group col-md-4">
+					<label class="col-md-5 no-padding">Prenume</label>
+					<input class="col-md-7 form-control" type="text" ng-model="medic.lastName">
+				</div>
+			</div>			
+			<div class="row">
 				<div class="form-group  col-md-4">
-					<label class="col-md-5">Specializare</label>
-				  <select class="col-md-7"ng-model="myColor" ng-options="color.name for color in colors">
+					<label class="col-md-5 no-padding">Specializare</label>
+				  <select class="col-md-7 form-control" ng-model="medic.specialization" ng-options="specialization.name for specialization in specializations">
 			      <option value="">Alege specializarea</option>
 			    </select>
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-md-4">
-					<label class="col-md-5">Judet</label>
-									  <select class="col-md-7"ng-model="myColor" ng-options="color.name for color in colors">
+					<label class="col-md-5 no-padding">Judet</label>
+									  <select class="col-md-7 form-control"ng-model="medic.judet" ng-options="judet.name for judet in judete">
 			      <option value="">Alege judetul</option>
 			    </select>
 				</div>	
 			</div>
 			<div class="row">
 				<div class="form-group col-md-4">
-					<label class="col-md-5">Localitati</label>
-									  <select class="col-md-7"ng-model="myColor" ng-options="color.name for color in colors">
+					<label class="col-md-5 no-padding">Localitati</label>
+									  <select class="col-md-7 form-control" ng-model="medic.location" ng-options="location.name for location in locations">
 			      <option value="">Alege localitatea</option>
 			    </select>
 				</div>	

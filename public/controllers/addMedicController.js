@@ -46,13 +46,17 @@
 
     $scope.addMedic = function() {
       var url = '/api/medic/';
+      $scope.medic.specialization = $scope.medic.specialization ? $scope.medic.specialization._id : null;
+      $scope.medic.judet = $scope.medic.judet ? $scope.medic.judet._id : null;
+      $scope.medic.location = $scope.medic.location ? $scope.medic.location._id : null;
+      $scope.medic.rating = 0;
       console.log($scope.medic);
-      // Util.create(url, $scope.medic)
-      //   .then(function(result) {
-      //     $scope.medic = {};
-      //   }, function(error) {
-      //     console('error');
-      //   })
+      Util.create(url, $scope.medic)
+        .then(function(result) {
+          $scope.medic = {};
+        }, function(error) {
+          console.log('error');
+        })
     }
 
     $scope.navigateTo = function(state) {

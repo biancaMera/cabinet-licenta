@@ -33,7 +33,8 @@
     .state('medici', {
       url: '/medici',
       templateUrl: 'views/medic.html',
-      controller: 'MedicController'
+      controller: 'MedicController',
+      params: {query: null}, 
     }) 
     .state('admin', {
       url: '/admin',
