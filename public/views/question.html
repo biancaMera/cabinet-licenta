@@ -1,0 +1,15 @@
+<meniu-directive></meniu-directive>
+
+<div id="question-answer">
+	<div ng-repeat="(question, key) in questions">
+			<!-- <h2>{{question}}</h2> -->
+			<h2>{{key.body}}</h2>
+			<div ng-repeat="answer in key.answers">
+				<p class="answer">{{answer.body}}</p>
+			</div>
+			<div class="answer">
+				<input type="text" class="form-control margin-bottom-20" ng-model="answer[question].body" placeholder="Raspunde la intrebare">
+				<button class="btn btn-default" ng-click="addAnswer(question)" >Raspunde</button>
+			</div>
+	</div>
+</div>

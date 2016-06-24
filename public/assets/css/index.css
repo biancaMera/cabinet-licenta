@@ -2,6 +2,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Open Sans';
+  background-color: #f3f3f4
 }
 
 h1, h2, h3 {
@@ -10,6 +11,13 @@ h1, h2, h3 {
 
 .no-padding {
 	padding: 0
+}
+
+.answer {
+  font-size: 16px;
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 5px
 }
 
 .single-medic {

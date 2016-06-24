@@ -16,7 +16,34 @@ module.exports.getQuestions = getQuestions;
 module.exports.getQuestionById = getQuestionById;
 module.exports.deleteQuestion = deleteQuestion;
 module.exports.jsonQuestion = jsonQuestion;
+module.exports.formatQuestionsAnswers = formatQuestionsAnswers;
 
+
+function formatQuestionsAnswers(req, res, next) {
+  let questions = req.resources.question;
+  let answers = req.resources.answer;
+
+  let format = {};
+
+  for(let i = 0; i < questions.length; i++) {
+    let data = questions[i].toObject();;
+
+    data.answers = [];
+    console.log('data', data);
+    format[data._id] = data;
+  }
+  for(let i = 0; i < answers.length; i++) {
+    let data = answers[i].toObject();
+    let questionId = data.question._id;
+    delete data.question;
+    format[questionId].answers.push(data);
+  }
+
+  req.resources.question = format;
+  console.log('format', format);
+
+  next();
+}
 
 function addQuestion(req, res, next) {
   let question = _.pick(req.body, ['body']);

@@ -16,7 +16,7 @@ let answerSchema = new Schema({
   },
   question: {
     type: ObjectId,
-    ref: 'User',
+    ref: 'Question',
     required: true
   } ,
   createdAt: {

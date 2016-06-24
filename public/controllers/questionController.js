@@ -10,24 +10,12 @@
   function QuestionController(Util, $state, $scope, $location, $anchorScroll) {
     
     $scope.questions = [];
-    $scope.answers = [];
     $scope.answer = {};
 
-    initializeQuestions();
-    initializeAnswers();
+    initializeQuestionsAnswers();
 
-    function initializeAnswers() {
-      var url = '/api/answers';
-      Util.get(url)
-        .then(function (result) {
-          $scope.answers = result.data;
-        }, function(error) {
-          console.log('error',error);
-        });
-    }
-
-    function initializeQuestions() {
-      var url = '/api/questions';
+    function initializeQuestionsAnswers() {
+      var url = '/api/questions/answers';
       Util.get(url)
         .then(function (result) {
           $scope.questions = result.data;
@@ -37,21 +25,17 @@
     }
 
 
-    $scope.addAnswer = function() {
+    $scope.addAnswer = function(questionId) {
       var url = '/api/answer';
-      Util.create(url, $scope.answer)
+      $scope.answer[questionId].question = questionId;
+      Util.create(url, $scope.answer[questionId])
         .then(function (result) {
           $scope.answer = {};
+          initializeQuestionsAnswers();
         }, function(error) {
           console.log('error',error);
         });
     };
-
-
-    $scope.gotoAnchor = function(id) {
-      $location.hash(id);
-      $anchorScroll();
-    }
 
     $scope.navigateTo = function(state, id) {
       if(id) {
@@ -60,8 +44,5 @@
         $state.go(state);
       }
     };
-    $scope.findMedic = function() {
-      $state.go('medici');
-    }
   }
 })();
