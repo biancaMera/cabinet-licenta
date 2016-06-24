@@ -156,14 +156,13 @@
 			<div class="row">
 				<div class="form-group col-md-6">
 					<label class="col-md-12 no-padding">Adreseaza o intrebare</label>
-					<textarea cols="40" rows="5">
-						
+					<textarea ng-model="question.body" cols="40" rows="5">
 					</textarea>
 				</div>
 			</div>
 			<div class="row">
 				<div class="form-group col-md-3">
-					<button class="col-md-5 btn btn-default">Intreaba</button>
+					<button ng-click="addQuestion()" class="col-md-5 btn btn-default">Intreaba</button>
 				</div>
 			</div>
 		</form>

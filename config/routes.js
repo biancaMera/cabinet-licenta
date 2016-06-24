@@ -6,4 +6,6 @@ module.exports.init = function(app) {
 	app.use('/api', require(routesPath + '/users'));
 	app.use('/api', require(routesPath + '/admin'));
 	app.use('/api', require(routesPath + '/medic'));
+	app.use('/api', require(routesPath + '/question'));
+	app.use('/api', require(routesPath + '/answer'));
 }

@@ -9,6 +9,8 @@
 
   function HomeController(Util, $state, $scope, $location, $anchorScroll) {
     $scope.medic = {};
+    $scope.question = {};
+
 
     initializeSpecialization();
     initializeJudete();
@@ -44,6 +46,17 @@
           console.log('error',error);
         });
     }
+
+    $scope.addQuestion = function() {
+      var url = '/api/question';
+      Util.create(url, $scope.question)
+        .then(function (result) {
+          $scope.question = {};
+        }, function(error) {
+          console.log('error',error);
+        });
+    };
+    
     $scope.gotoAnchor = function(id) {
       $location.hash(id);
       $anchorScroll();

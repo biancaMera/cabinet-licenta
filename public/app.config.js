@@ -75,6 +75,11 @@
       url: '/addMedic',
       templateUrl: 'views/addMedic.html',
       controller: 'addMedicController'
+    })
+    .state('questions', {
+      url: '/questions',
+      templateUrl: 'views/question.html',
+      controller: 'QuestionController'
     }) 
     $urlRouterProvider.otherwise("/login");
   }
