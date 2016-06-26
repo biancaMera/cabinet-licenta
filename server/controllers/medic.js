@@ -1,17 +1,14 @@
 'use strict';
 
-/**
- *  Module dependencies
- */
+
 const _ = require('lodash');
 const mongoose = require('mongoose');
 const Medic = mongoose.model('Medic');
 
-/**
- *  Module exports
- */
+
 module.exports.addMedic = addMedic;
 module.exports.update = update;
+module.exports.updateRating = updateRating;
 module.exports.getMedici = getMedici;
 module.exports.getMedicById = getMedicById;
 module.exports.deleteMedic = deleteMedic;
@@ -37,6 +34,20 @@ function deleteMedic(req, res, next) {
     if (err) {
       return next(err);
     }
+    next();
+  });
+}
+
+function updateRating(req, res, next) {
+  let medic = req.resources.medic;
+  let body = _.pick(req.body, ['totalNrOfVotes']);
+  let totalNrOfVotes = medic.totalNrOfVotes + body.totalNrOfVotes;
+  let rating = totalNrOfVotes / (medic.votes + 1);
+  Medic.update({_id: medic._id}, { $inc: { votes: 1}, rating: rating, totalNrOfVotes: totalNrOfVotes }, (err, result) => {
+    if(err) {
+      return next(err);
+    }
+    req.resources.medic = result;
     next();
   });
 }
@@ -90,6 +101,7 @@ function getMedici(req, res, next) {
 
   Medic
   .find(query)
+  .sort({rating: -1})
   .populate('specialization')
   .populate('judet')
   .populate('location')

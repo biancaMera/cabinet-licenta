@@ -41,21 +41,25 @@
     }
 
     $scope.updateMedic = function(medicId) {
-      var url = '/api/medic/' + medicId;
+      var url = '/api/medic/rating/' + medicId;
       var notaFinala = 0;
       var notaLength = Object.keys($scope.nota[medicId]).length;
       for(var i in $scope.nota[medicId]) {
         var nota = $scope.nota[medicId][i];
+        if(nota > 5) {
+          nota = 5;
+        }
         notaFinala += nota;
       }
 
       notaFinala = notaFinala / notaLength;
       var medic =  {
-        rating: Math.round(notaFinala)
+        totalNrOfVotes: notaFinala
       };
 
       Util.update(url, medic)
         .then(function(result) {
+          $scope.nota[medicId] = {};
           getMedici();
         }, function(error) {
           console.log('error');

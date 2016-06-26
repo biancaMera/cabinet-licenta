@@ -42,14 +42,12 @@ module.exports.init = function(app) {
   //intra la fiecare apelare de ruta
 
   app.use(function(req, res, next) {
-    console.log(11);
   	req.resources = req.resources || {};
   	next();
   });
 
   //intra la fiecare eroare
   app.use(function (err, req, res, next) {
-    console.log('err',err);
   	res.json(err);
   });
 }

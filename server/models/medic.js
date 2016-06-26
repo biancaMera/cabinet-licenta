@@ -29,8 +29,17 @@ let medicSchema = new Schema({
   	ref: 'Location',
   	required: true
   },
+
   rating: {
   	type: Number,
+    default: 0
+  },
+  votes: {
+    type: Number,
+    default: 0
+  },
+  totalNrOfVotes: {
+    type: Number,
     default: 0
   },
   createdAt: {
