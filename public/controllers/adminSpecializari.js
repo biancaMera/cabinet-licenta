@@ -9,6 +9,7 @@
 
   function AdminSpecializari(Util, $state, $scope, $location, $anchorScroll) {
     
+
     // $scope.specializations = [];
     var specializationId;
     $scope.isEditPage = false;
@@ -33,6 +34,7 @@
 
     $scope.addSpecialization = function() {
       var url = '/api/specialization/';
+      console.log($scope.specialization);
       Util.create(url, $scope.specialization)
         .then(function(result) {
           $scope.specialization = {};

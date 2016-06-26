@@ -5,6 +5,6 @@ module.exports.init = function(app) {
 	let modelsArray = ['user', 'specialization', 'location', 'judet', 'medic', 'question', 'answer'];
 
 	  modelsArray.forEach(function(model) {
-    require(modelsPath + model);
+    require(modelsPath + model); //Inregistreaza fiecare model
   });
 }

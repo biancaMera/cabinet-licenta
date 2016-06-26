@@ -1,4 +1,5 @@
 'use strict';
+//Mai multe module dependente pt express
 const path = require('path');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
@@ -35,11 +36,18 @@ module.exports.init = function(app) {
   app.use(passport.initialize());
   app.use(passport.session());
 
+
+  // middlewares
+
+  //intra la fiecare apelare de ruta
+
   app.use(function(req, res, next) {
+    console.log(11);
   	req.resources = req.resources || {};
   	next();
   });
 
+  //intra la fiecare eroare
   app.use(function (err, req, res, next) {
     console.log('err',err);
   	res.json(err);

@@ -53,12 +53,14 @@ function updateSpecialization(req, res, next) {
 }
 
 function addSpecialization(req, res, next) {
+  console.log(222);
   let specialization = _.pick(req.body, ['name']);
 
   Specialization.create(specialization, (err, result) => {
     if (err && (11000 === err.code || 11001 === err.code)) {
       return res.status(400).json({ message: 'Name is already in use.' });
     }
+    console.log('result', result);
     req.resources.specialization = result;
     next();
   });
@@ -96,6 +98,7 @@ function getSpecializationById(req, res, next) {
 }
 
 function jsonSpecialization(req, res, next) {
+  console.log(333);
   res.json(req.resources.specialization);
 }
 
