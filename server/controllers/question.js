@@ -24,32 +24,35 @@ function formatQuestionsAnswers(req, res, next) {
   let answers = req.resources.answer;
 
   let format = {};
-
   for(let i = 0; i < questions.length; i++) {
     let data = questions[i].toObject();;
 
     data.answers = [];
-    console.log('data', data);
     format[data._id] = data;
   }
   for(let i = 0; i < answers.length; i++) {
     let data = answers[i].toObject();
     let questionId = data.question._id;
     delete data.question;
-    format[questionId].answers.push(data);
+    if(format[questionId]) {
+      format[questionId].answers.push(data);
+    }
   }
 
   req.resources.question = format;
-  console.log('format', format);
 
   next();
 }
 
 function addQuestion(req, res, next) {
-  let question = _.pick(req.body, ['body']);
-
+  let question = _.pick(req.body, ['body', 'user']);
+  console.log(question);
+  // if(!question.body) {
+  //   console.log(11);
+  //   return next({message: 'Trebuie introdusa intrebarea!'})
+  // }
+  // console.log(22);
   Question.create(question, (err, result) => {
-    console.log('err', err);
     if(err) {
       return next(err);
     }
@@ -83,10 +86,14 @@ function update(req, res, next) {
 }
 
 function getQuestions(req, res, next) {
-  var query = {}
-
+  let query = {};
+  let userId = req.query ? req.query.userId : null;
+  if(userId) {
+    query.user = userId;
+  }
   Question
   .find(query)
+  .sort({createdAt: -1})
   .populate('user')
   .exec((err, result) => {
     if (err) {

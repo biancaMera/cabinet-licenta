@@ -79,7 +79,8 @@
     .state('questions', {
       url: '/questions',
       templateUrl: 'views/question.html',
-      controller: 'QuestionController'
+      controller: 'QuestionController',
+      params: {query: null}
     }) 
     $urlRouterProvider.otherwise("/login");
   }

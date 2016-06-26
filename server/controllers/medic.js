@@ -64,13 +64,17 @@ function getMedici(req, res, next) {
   var judet = req.query.judet;
 
 
-  // if(firstName) {
-  //   query.firstName = firstName
-  // }
+  if(firstName) {
+    let r = new RegExp(firstName, "i");
+    query.firstName = r;
+  }
 
-  // if(lastName) {
-  //   query.lastName = lastName
-  // }
+  if(lastName) {
+    let r = new RegExp(lastName, "i");
+    query.lastName = r;
+  }
+
+
   if(specialization) {
     query.specialization = specialization
   }
@@ -80,6 +84,9 @@ function getMedici(req, res, next) {
   if(judet) {
     query.judet = judet
   }
+
+  console.log('query', query);
+
 
   Medic
   .find(query)

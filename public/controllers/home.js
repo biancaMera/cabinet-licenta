@@ -5,13 +5,14 @@
   .module('cabinet')
   .controller('HomeController', HomeController);
 
-  HomeController.$inject = ['Util','$state', '$scope', '$location', '$anchorScroll'];
+  HomeController.$inject = ['Util', 'Login','$state', '$scope', '$location', '$anchorScroll'];
 
-  function HomeController(Util, $state, $scope, $location, $anchorScroll) {
+  function HomeController(Util, Login, $state, $scope, $location, $anchorScroll) {
     $scope.medic = {};
     $scope.question = {};
 
-
+    $scope.user = Login.getLoggedUser();
+    
     initializeSpecialization();
     initializeJudete();
     initializeLocations();
@@ -49,6 +50,11 @@
 
     $scope.addQuestion = function() {
       var url = '/api/question';
+      console.log('$scope.user', $scope.user);
+      if($scope.user) {
+        $scope.question.user = $scope.user._id;
+      }
+      console.log('$scope.question', $scope.question);
       Util.create(url, $scope.question)
         .then(function (result) {
           $scope.question = {};
@@ -71,6 +77,14 @@
       queryObj.judet = queryObj.judet ? queryObj.judet._id : null;
       queryObj.location = queryObj.location ? queryObj.location._id : null;
       $state.go('medici', {query: queryObj});
+    }    
+
+    $scope.findQuestions = function(userId) {
+      var queryObj = {};
+      if(userId) {
+        queryObj.userId = userId;
+      }
+      $state.go('questions', {query: queryObj});
     }
   }
 })();

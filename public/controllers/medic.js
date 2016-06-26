@@ -10,6 +10,7 @@
   function MedicController(Util,Login, $state, $scope, $location, $anchorScroll, $stateParams) {
     $scope.medici = [];
     $scope.user = Login.getLoggedUser();
+    $scope.nota = {};
     var query = $stateParams.query;
     getMedici(query);
 
@@ -38,6 +39,29 @@
           console.log('error',error);
         });
     }
+
+    $scope.updateMedic = function(medicId) {
+      var url = '/api/medic/' + medicId;
+      var notaFinala = 0;
+      var notaLength = Object.keys($scope.nota[medicId]).length;
+      for(var i in $scope.nota[medicId]) {
+        var nota = $scope.nota[medicId][i];
+        notaFinala += nota;
+      }
+
+      notaFinala = notaFinala / notaLength;
+      var medic =  {
+        rating: Math.round(notaFinala)
+      };
+
+      Util.update(url, medic)
+        .then(function(result) {
+          getMedici();
+        }, function(error) {
+          console.log('error');
+        })
+    }
+
 
     $scope.gotoAnchor = function(id) {
       $location.hash(id);

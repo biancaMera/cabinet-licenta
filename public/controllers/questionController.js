@@ -5,17 +5,26 @@
   .module('cabinet')
   .controller('QuestionController', QuestionController);
 
-  QuestionController.$inject = ['Util','$state', '$scope', '$location', '$anchorScroll'];
+  QuestionController.$inject = ['Util','$state', '$scope', '$location', '$anchorScroll', '$stateParams'];
 
-  function QuestionController(Util, $state, $scope, $location, $anchorScroll) {
+  function QuestionController(Util, $state, $scope, $location, $anchorScroll, $stateParams) {
     
     $scope.questions = [];
     $scope.answer = {};
-
+    var query = $stateParams.query;
+    var searchUrl='';
+    var userId;
+    if(query && query.userId) {
+      userId = query.userId;
+      searchUrl = '?userId=' + userId;
+    }
     initializeQuestionsAnswers();
 
     function initializeQuestionsAnswers() {
       var url = '/api/questions/answers';
+      if(searchUrl) {
+        url += searchUrl;
+      }
       Util.get(url)
         .then(function (result) {
           $scope.questions = result.data;

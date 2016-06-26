@@ -41,6 +41,7 @@ module.exports.init = function(app) {
   });
 
   app.use(function (err, req, res, next) {
+    console.log('err',err);
   	res.json(err);
   });
 }

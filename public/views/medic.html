@@ -51,7 +51,7 @@
 				<label class="col-md-7">
 					<jk-rating-stars 
 						max-rating="5" 
-						rating="1" 
+						rating="medic.rating" 
 						read-only="true"
 					 	on-rating="onRating(rating)" >
 					</jk-rating-stars>
@@ -71,7 +71,7 @@
 						</label>
 						<label class="col-md-6">
 						 	Nota
-						  <input type="number" class="form-control" min="1" max="5">
+						  <input type="number" ng-model="nota[medic._id].comunicare" class="form-control" min="1" max="5">
 						</label>
 					</div>
 				</div>
@@ -82,7 +82,7 @@
 						</label>
 						<label class="col-md-6">
 						 	Nota
-						  <input type="number" class="form-control" min="1" max="5">
+						  <input type="number" ng-model="nota[medic._id].pregatire" class="form-control" min="1" max="5">
 						</label>
 					</div>
 				</div>
@@ -93,7 +93,7 @@
 						</label>
 						<label class="col-md-6">
 						 	Nota
-						  <input type="number" class="form-control" min="1" max="5">
+						  <input type="number" ng-model="nota[medic._id].atitudine" class="form-control" min="1" max="5">
 						</label>
 					</div>
 				</div>
@@ -107,7 +107,7 @@
 				</label>
 				<label class="col-md-6">
 				 	Nota
-				  <input type="number" class="form-control" min="1" max="5">
+				  <input type="number" ng-model="nota[medic._id].dotare" class="form-control" min="1" max="5">
 				</label>
 			</div>
 		</div>
@@ -118,18 +118,15 @@
 				</label>
 				<label class="col-md-6">
 				 	Nota
-				  <input type="number" class="form-control" min="1" max="5">
+				  <input type="number" ng-model="nota[medic._id].disponibilitate" class="form-control" min="1" max="5">
 				</label>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
+
 				<label class="col-md-6">
-					Punctaj final:
-				</label>
-				<label class="col-md-6">
-				 	Nota
-				  <input type="number" class="form-control" min="1" max="5">
+					<button ng-click="updateMedic(medic._id)" class="btn btn-default">Da nota</button>
 				</label>
 			</div>
 		</div>

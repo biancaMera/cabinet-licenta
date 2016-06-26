@@ -19,7 +19,7 @@ module.exports.jsonAnswer = jsonAnswer;
 
 
 function addAnswer(req, res, next) {
-  let answer = _.pick(req.body, ['body', 'question']);
+  let answer = _.pick(req.body, ['body', 'question', 'user']);
 
   Answer.create(answer, (err, result) => {
     console.log('err', err);
@@ -57,7 +57,11 @@ function update(req, res, next) {
 
 function getAnswers(req, res, next) {
   var query = {}
-
+  // let userId = req.query ? req.query.userId : null;
+  // if(userId) {
+  //   query.user = userId;
+  // }
+  console.log('query', query);
   Answer
   .find(query)
   .populate('user')
