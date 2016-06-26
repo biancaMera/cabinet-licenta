@@ -8,7 +8,6 @@ const mongoose = require('mongoose');
 const Specialization = mongoose.model('Specialization');
 const Location = mongoose.model('Location');
 const Judet = mongoose.model('Judet');
-
 /**
  *  Module exports
  */

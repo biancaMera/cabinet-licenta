@@ -9,6 +9,7 @@ function isAdmin(req, res, next) {
 	if(user.role != 'admin') {
   	res.status(401).json({ message: 'Nu ai permisiunea de admin' });
 	}
+	next();
 }
 
 function isSelf(req, res, next) {
@@ -18,4 +19,5 @@ function isSelf(req, res, next) {
 	if(loggedUser._id != user._id) {
   	res.status(401).json({ message: 'Nu ai permisiunea necesara' });
 	}
+	next();
 }
