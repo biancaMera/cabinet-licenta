@@ -4,6 +4,8 @@
 	<div ng-repeat="(question, key) in questions">
 			<!-- <h2>{{question}}</h2> -->
 			<h2>{{key.body}}</h2>
+			<h5 ng-show="key.user.name">Intrebare pusa de {{key.user.name}}</h5>
+			<h5 ng-show="!key.user.name">Intrebare pusa de user nelogat</h5>
 			<div ng-repeat="answer in key.answers">
 				<p class="answer">{{answer.body}}</p>
 			</div>

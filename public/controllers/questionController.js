@@ -27,6 +27,7 @@
       }
       Util.get(url)
         .then(function (result) {
+          console.log('result', result);
           $scope.questions = result.data;
         }, function(error) {
           console.log('error',error);
